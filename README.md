@@ -1,14 +1,10 @@
 # armbian-bootsplash
 
-Armbian bootsplash generator
-
+Armbian bootsplash generator, extracted from armbian build tools
 
 ## Requirements
 
-
 Install the linux headers for your platform using `armbian-config`.
-
-
 
 ## Usage
 
@@ -16,13 +12,10 @@ Clone the repo:
 
 ```shell
 git clone https://github.com/mtgrosser/armbian-bootsplash.git
-```
-
-Place your image in the working dir as `logo.png`:
-
-```shell
 cd armbian-bootsplash
 ```
+
+Then place your image in the repo dir as `logo.png`.
 
 Make the `bootsplash-packer` executable:
 
