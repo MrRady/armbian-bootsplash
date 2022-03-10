@@ -7,8 +7,8 @@ THROBBER=spinner.gif
 THROBBER_WIDTH=$(identify $THROBBER | head -1 | cut -d " " -f 3 | cut -d x -f 1)
 THROBBER_HEIGHT=$(identify $THROBBER | head -1 | cut -d " " -f 3 | cut -d x -f 2)
 mkdir -p "${WORKDIR}"
-convert -alpha remove -background "#000000"	$LOGO tmp/logo.rgb
-convert -alpha remove -background "#000000" $THROBBER tmp/throbber%02d.rgb
+convert -alpha remove -background "#000000"	$LOGO "${OUTDIR}"/logo.rgb
+convert -alpha remove -background "#000000" $THROBBER "${OUTDIR}"/throbber%02d.rgb
 ./bootsplash-packer \
 --bg_red 0x00 \
 --bg_green 0x00 \
@@ -18,7 +18,7 @@ convert -alpha remove -background "#000000" $THROBBER tmp/throbber%02d.rgb
 --pic_width $LOGO_WIDTH \
 --pic_height $LOGO_HEIGHT \
 --pic_position 0 \
---blob tmp/logo.rgb \
+--blob "${OUTDIR}"/logo.rgb \
 --picture \
 --pic_width $THROBBER_WIDTH \
 --pic_height $THROBBER_HEIGHT \
