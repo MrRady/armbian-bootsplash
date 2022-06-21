@@ -6,8 +6,8 @@ LOGO_HEIGHT=$(identify $LOGO | cut -d " " -f 3 | cut -d x -f 2)
 THROBBER=spinner.gif
 THROBBER_WIDTH=$(identify $THROBBER | head -1 | cut -d " " -f 3 | cut -d x -f 1)
 THROBBER_HEIGHT=$(identify $THROBBER | head -1 | cut -d " " -f 3 | cut -d x -f 2)
-convert -alpha remove -background "#000000"	$LOGO "${OUTDIR}"/logo.rgb
-convert -alpha remove -background "#000000" $THROBBER "${OUTDIR}"/throbber%02d.rgb
+convert -alpha remove -background "#000000"	$LOGO "${WORKDIR}"/logo.rgb
+convert -alpha remove -background "#000000" $THROBBER "${WORKDIR}"/throbber%02d.rgb
 ./bootsplash-packer \
 --bg_red 0x00 \
 --bg_green 0x00 \
